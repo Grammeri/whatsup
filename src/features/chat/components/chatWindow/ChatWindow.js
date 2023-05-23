@@ -1,7 +1,6 @@
-// ChatWindow.js
 import React from 'react';
 
-const ChatWindow = ({ selectedChat }) => {
+export const ChatWindow = ({ selectedChat }) => {
     return (
         <div>
             <h1>{selectedChat.name}</h1>
@@ -12,4 +11,4 @@ const ChatWindow = ({ selectedChat }) => {
     );
 };
 
-export default ChatWindow;
+

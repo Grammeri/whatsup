@@ -1,7 +1,6 @@
-// ChatInput.js
 import React, { useState } from 'react';
 
-const ChatInput = ({ onSubmit }) => {
+export const ChatInput = ({ onSubmit }) => {
     const [message, setMessage] = useState('');
 
     const handleSubmit = e => {
@@ -23,4 +22,4 @@ const ChatInput = ({ onSubmit }) => {
     );
 };
 
-export default ChatInput;
+

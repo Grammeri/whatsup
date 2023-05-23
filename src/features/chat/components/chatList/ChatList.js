@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ChatList = ({ chats }) => {
+export const ChatList = ({ chats }) => {
     return (
         <div>
             {chats.map(chat => (
@@ -13,4 +13,3 @@ const ChatList = ({ chats }) => {
     );
 };
 
-export default ChatList;

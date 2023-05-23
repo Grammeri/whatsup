@@ -1,10 +1,9 @@
-// src/features/chat/components/Chat.js
 import React from 'react';
 import ChatList from './ChatList';
 import ChatWindow from './ChatWindow';
 import ChatInput from './ChatInput';
 
-const Chat = () => {
+export const ParentChat = () => {
     return (
         <div>
             <ChatList />
@@ -14,4 +13,3 @@ const Chat = () => {
     );
 };
 
-export default Chat;
