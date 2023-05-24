@@ -1,0 +1,29 @@
+/* ChatInput.css */
+.chat-form {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    margin-right: 10px;
+    background-color: #f0f0f0;
+}
+
+.chat-send {
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    background-color: #075e54;
+    cursor: pointer;
+}
+
+.chat-send:hover {
+    background-color: #05493c;
+}

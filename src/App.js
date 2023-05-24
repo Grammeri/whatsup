@@ -5,11 +5,13 @@ import {ChatInput} from "./features/chat/components/chatInput/ChatInput";
 import {ChatList} from "./features/chat/components/chatList/ChatList";
 import {ChatWindow} from "./features/chat/components/chatWindow/ChatWindow";
 import notFound from "./assets/404.jpg"
+import {Header} from "./common/components/header/Header";
 
 function App() {
   return (
       <Router>
     <div className="App">
+        <Header/>
         <Routes>
             <Route path="/" element={<LoginForm/>}/>
             <Route path="/input" element={<ChatInput/>}/>
