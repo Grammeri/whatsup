@@ -1,0 +1,18 @@
+.chat-list {
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.chat-list-item {
+    padding: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.chat-title {
+    font-weight: bold;
+}
+
+.chat-message {
+    color: #888;
+    font-size: 0.9em;
+}

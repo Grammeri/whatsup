@@ -1,0 +1,14 @@
+.chat-window {
+    background-color: #fff;
+    padding: 20px;
+}
+
+.chat-window-title {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.chat-window-message {
+    margin-bottom: 10px;
+    line-height: 1.4;
+}

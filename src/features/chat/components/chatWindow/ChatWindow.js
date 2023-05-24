@@ -1,14 +1,18 @@
+// ChatWindow.js
 import React from 'react';
+import './ChatWindow.css';
 
 export const ChatWindow = ({ selectedChat }) => {
+    if (!selectedChat) {
+        return <div className="no-chat-selected">No chat selected</div>;
+    }
+
     return (
-        <div>
-            <h1>{selectedChat.name}</h1>
+        <div className="chat-window">
+            <h1 className="chat-name">{selectedChat.name}</h1>
             {selectedChat.messages.map((message, index) => (
-                <p key={index}>{message}</p>
+                <p key={index} className="chat-message">{message}</p>
             ))}
         </div>
     );
 };
-
-
