@@ -2,22 +2,25 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 
 const LoginForm = ({ onSubmit }) => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <input
-                {...register("username", { required: "Username is required" })}
-                placeholder="Username"
+                {...register('idInstance', { required: 'idInstance is required' })}
+                placeholder="idInstance"
             />
-            {errors.username && <p>{errors.username.message}</p>}
+            {errors.idInstance && <p>{errors.idInstance.message}</p>}
 
             <input
-                type="password"
-                {...register("password", { required: "Password is required" })}
-                placeholder="Password"
+                {...register('apiTokenInstance', { required: 'apiTokenInstance is required' })}
+                placeholder="apiTokenInstance"
             />
-            {errors.password && <p>{errors.password.message}</p>}
+            {errors.apiTokenInstance && <p>{errors.apiTokenInstance.message}</p>}
 
             <button type="submit">Log In</button>
         </form>

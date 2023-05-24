@@ -7,7 +7,6 @@ export const messageApi = {
             message,
         });
     },
-
     receiveMessage: () => {
         return instance.get(`waInstance/{{idInstance}}/ReceiveMessage/{{apiTokenInstance}}`);
     }
