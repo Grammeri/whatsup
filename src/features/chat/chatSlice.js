@@ -1,20 +1,30 @@
+// chatSlice.js
+
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { messageApi } from '../api/greenAPI';
+import { messageApi } from '../../api/messageAPI';
 
 // Create the async thunks
 export const sendMessage = createAsyncThunk(
     'chat/sendMessage',
-    async ({ idInstance, apiTokenInstance, chatId, message }, thunkAPI) => {
-        const response = await messageApi.sendMessage(idInstance, apiTokenInstance, chatId, message);
-        return response.data;
+    async ({ chatId, message }, thunkAPI) => {
+        try {
+            const response = await messageApi.sendMessage(chatId, message);
+            return response.data;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error.response.data);
+        }
     }
 );
 
 export const receiveMessage = createAsyncThunk(
     'chat/receiveMessage',
-    async ({ idInstance, apiTokenInstance }, thunkAPI) => {
-        const response = await messageApi.receiveMessage(idInstance, apiTokenInstance);
-        return response.data;
+    async (_, thunkAPI) => {
+        try {
+            const response = await messageApi.receiveMessage();
+            return response.data;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error.response.data);
+        }
     }
 );
 
@@ -32,7 +42,7 @@ const chatSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder
-            .addCase(sendMessage.pending, (state, action) => {
+            .addCase(sendMessage.pending, (state) => {
                 state.status = 'loading';
             })
             .addCase(sendMessage.fulfilled, (state, action) => {
@@ -41,18 +51,18 @@ const chatSlice = createSlice({
             })
             .addCase(sendMessage.rejected, (state, action) => {
                 state.status = 'failed';
-                state.error = action.error.message;
+                state.error = action.payload.error;
             })
-            .addCase(receiveMessage.pending, (state, action) => {
+            .addCase(receiveMessage.pending, (state) => {
                 state.status = 'loading';
             })
             .addCase(receiveMessage.fulfilled, (state, action) => {
                 state.status = 'succeeded';
-                state.messages.push(action.payload);
+                state.messages = state.messages.concat(action.payload);
             })
             .addCase(receiveMessage.rejected, (state, action) => {
                 state.status = 'failed';
-                state.error = action.error.message;
+                state.error = action.payload.error;
             });
     },
 });

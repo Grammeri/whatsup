@@ -1,5 +1,5 @@
-import greenAPI from './greenAPI';
+import messageAPI from './messageAPI';
 
 export {
-    greenAPI
+    messageAPI
 };

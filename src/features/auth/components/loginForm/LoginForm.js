@@ -1,13 +1,29 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
 import './LoginForm.css';
+import {login} from "../../authSlice"
+import { useNavigate } from 'react-router-dom';
 
-const LoginForm = ({ onSubmit }) => {
+export const LoginForm = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     const {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm();
+    } = useForm({
+        defaultValues: {
+            idInstance: "",
+            apiTokenInstance: "",
+        }
+    });
+
+    const onSubmit = (data) => {
+        dispatch(login(data));
+        navigate('/list');
+    }
 
     return (
         <div className="login-container">
@@ -34,5 +50,3 @@ const LoginForm = ({ onSubmit }) => {
         </div>
     );
 };
-
-export default LoginForm;

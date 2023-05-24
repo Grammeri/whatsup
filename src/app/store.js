@@ -1,14 +1,11 @@
-/*
-
-
-// объединяя reducer-ы с помощью combineReducers,
-// мы задаём структуру нашего единственного объекта-состояния
-import { configureStore } from '@reduxjs/toolkit';
+import {combineReducers, configureStore} from '@reduxjs/toolkit';
+import {chatReducer} from "../features/chat/chatSlice";
 import {authReducer} from "../features/auth/authSlice";
 
 
 export const rootReducer = combineReducers({
-auth: authReducer
+    auth: authReducer,
+    chat: chatReducer
 })
 // непосредственно создаём store
 //export const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
@@ -23,5 +20,3 @@ export const store = configureStore({
 window.store = store
 
 
-*/
-export {}
