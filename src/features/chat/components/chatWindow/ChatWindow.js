@@ -11,7 +11,9 @@ export const ChatWindow = ({ selectedChat }) => {
         <div className="chat-window">
             <h1 className="chat-name">{selectedChat.name}</h1>
             {selectedChat.messages.map((message, index) => (
-                <p key={index} className="chat-message">{message}</p>
+                <p key={index} className={message.sentByMe ? 'chat-message sent' : 'chat-message received'}>
+                    {message.text}
+                </p>
             ))}
         </div>
     );

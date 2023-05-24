@@ -2,13 +2,13 @@ import { instance } from "common/api/common.api";
 
 export const messageApi = {
     sendMessage: (chatId, message) => {
-        return instance.post(`waInstance/{{idInstance}}/SendMessage/{{apiTokenInstance}}`, {
+        return instance.post(`{{idInstance}}/SendMessage/{{apiTokenInstance}}`, {
             chatId,
             message,
         });
     },
     receiveMessage: () => {
-        return instance.get(`waInstance/{{idInstance}}/ReceiveMessage/{{apiTokenInstance}}`);
+        return instance.get(`{{idInstance}}/ReceiveMessage/{{apiTokenInstance}}`);
     }
 };
 

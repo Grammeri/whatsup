@@ -12,3 +12,15 @@
     margin-bottom: 10px;
     line-height: 1.4;
 }
+
+.chat-message.sent {
+    /* styles for messages sent by the user */
+    color: blue;
+    text-align: right;
+}
+
+.chat-message.received {
+    /* styles for messages received by the user */
+    color: green;
+    text-align: left;
+}
