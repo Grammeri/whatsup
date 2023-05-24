@@ -1,11 +1,17 @@
-import {configureStore} from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
+import { setupListeners } from "@reduxjs/toolkit/query";
+import { greenAPI } from "./api";
 
-
-export const store = configureStore({
+const store = configureStore({
     reducer: {
-        chat: chatReducer,
-        // ...other reducers
+        // Your other reducers
+        [greenAPI.reducerPath]: greenAPI.reducer
     },
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware().concat(greenAPI.middleware)
 });
 
+setupListeners(store.dispatch);
+
 export default store;
+
