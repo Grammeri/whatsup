@@ -1,6 +1,6 @@
 import './App.css';
 import LoginForm from "./features/auth/components/loginForm/LoginForm";
-import {Navigate, Route, Routes} from "react-router-dom";
+import {BrowserRouter as Router, Navigate, Route, Routes} from 'react-router-dom';
 import {ChatInput} from "./features/chat/components/chatInput/ChatInput";
 import {ChatList} from "./features/chat/components/chatList/ChatList";
 import {ChatWindow} from "./features/chat/components/chatWindow/ChatWindow";
@@ -8,6 +8,7 @@ import notFound from "./assets/404.jpg"
 
 function App() {
   return (
+      <Router>
     <div className="App">
         <Routes>
             <Route path="/" element={<LoginForm/>}/>
@@ -19,6 +20,7 @@ function App() {
             <Route path="*" element={<Navigate to="/404"/>}/>
         </Routes>
     </div>
+      </Router>
   );
 }
 
