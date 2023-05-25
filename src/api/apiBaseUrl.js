@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export const instance = axios.create({
-    baseURL: 'https://api.green-api.com/waInstance/',
+    baseURL: 'https://api.green-api.com',
 });
 

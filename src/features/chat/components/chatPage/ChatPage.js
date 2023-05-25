@@ -1,8 +1,7 @@
 // ChatPage.js
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { sendMessage } from '../../slices/chatSlice';
-import './ChatPage.css';
+import {sendMessage} from "../../chatSlice";
 
 export const ChatPage = ({ selectedChat }) => {
     const [message, setMessage] = useState('');
@@ -50,4 +49,3 @@ export const ChatPage = ({ selectedChat }) => {
         </div>
     );
 };
-

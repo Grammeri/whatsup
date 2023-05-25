@@ -67,4 +67,5 @@ const chatSlice = createSlice({
     },
 });
 
+export const chatReducer = chatSlice.reducer
 export default chatSlice.reducer;

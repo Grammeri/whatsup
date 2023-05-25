@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import LoginForm from './components/LoginForm/LoginForm';
 
 const Auth = () => {
@@ -15,4 +15,4 @@ const Auth = () => {
     );
 };
 
-export default Auth;
+export default Auth;*/

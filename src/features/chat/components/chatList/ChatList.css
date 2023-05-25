@@ -1,5 +1,5 @@
 .chat-list {
-    background-color: #dcdcdc;
+    background-color: #ECE5DD;
     padding: 20px;
     height: 100vh;
     overflow: auto;
@@ -39,8 +39,8 @@
 form {
     display: flex;
     padding: 10px;
-    border-bottom: 1px solid #f0f0f0;
-    background-color: #f8f9fa;
+/*    border-bottom: 1px solid #f0f0f0;
+   background-color: #f8f9fa;*/
     max-width: 33%;
     margin: 0 auto 0 0;
 }

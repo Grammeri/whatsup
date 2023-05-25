@@ -1,14 +1,22 @@
 // ChatList.js
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import './ChatList.css';
 
 export const ChatList = ({ chats = [] }) => {
     const [phoneNumber, setPhoneNumber] = useState('');
+    const navigate = useNavigate();
 
     const handlePhoneNumberSubmit = (event) => {
         event.preventDefault();
         console.log(`Creating new chat with phone number: ${phoneNumber}`);
+
+        // Start a new chat with the entered phone number (replace this with your actual logic)
+        const newChatId = startNewChat(phoneNumber);
+
+        // Navigate to the ChatPage of the new chat
+        navigate(`/window/${newChatId}`);
+
         setPhoneNumber('');
     }
 
