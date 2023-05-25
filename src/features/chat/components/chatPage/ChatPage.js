@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./ChatPage.css"
 // import { useSelector, useDispatch } from 'react-redux';  // Commented for now, uncomment when ready to use Redux
 // import {sendMessage} from "../../chatSlice"; // Commented for now, uncomment when ready to connect to server
 

@@ -40,14 +40,14 @@ export const LoginForm = () => {
                         <div className={"formContent"}>
                             <input
                                 {...register('idInstance', {required: 'idInstance is required'})}
-                                placeholder="idInstance"
+                                placeholder="Welcome, type anything!"
                                 className="login-input"
                             />
                             {errors.idInstance && <p className="login-error">{errors.idInstance.message}</p>}
 
                             <input
                                 {...register('apiTokenInstance', {required: 'apiTokenInstance is required'})}
-                                placeholder="apiTokenInstance"
+                                placeholder="Type anything and click Log in!"
                                 className="login-input"
                             />
                             {errors.apiTokenInstance && <p className="login-error">{errors.apiTokenInstance.message}</p>}

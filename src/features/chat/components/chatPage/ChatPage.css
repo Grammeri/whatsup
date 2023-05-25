@@ -7,12 +7,16 @@
 
 .chat-message.sent {
     align-self: flex-end;
-    background-color: #a1eafb; // light blue
+    background-color: lightseagreen;
 color: black;
 }
 
 .chat-message.received {
     align-self: flex-start;
-    background-color: #dcdcdc; // light grey
+    background-color: #dcdcdc;
 color: black;
+}
+h1{
+    text-align: center;
+
 }
