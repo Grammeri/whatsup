@@ -1,0 +1,18 @@
+.chat-message {
+    max-width: 80%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.chat-message.sent {
+    align-self: flex-end;
+    background-color: #a1eafb; // light blue
+color: black;
+}
+
+.chat-message.received {
+    align-self: flex-start;
+    background-color: #dcdcdc; // light grey
+color: black;
+}
