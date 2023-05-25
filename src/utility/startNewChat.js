@@ -1,9 +1,9 @@
 // utils/api.js
-export async function startNewChat(apiToken, phoneNumber, message) {
+export async function startNewChat(apiTokenInstance, phoneNumber, message) {
     const response = await fetch('https://api.green-api.com/v1/messages', {
         method: 'POST',
         headers: {
-            'Authorization': `Bearer ${apiToken}`,
+            'Authorization': `Bearer ${apiTokenInstance}`,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({

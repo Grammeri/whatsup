@@ -2,20 +2,33 @@
 import React, { useState } from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import './ChatList.css';
+//import {startNewChat} from "../../../../utility/startNewChat";
+import {useSelector} from "react-redux";
+
 
 export const ChatList = ({ chats = [] }) => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const navigate = useNavigate();
 
-    const handlePhoneNumberSubmit = (event) => {
+    // Commented out for now - this will be needed when connecting to the server
+    //const apiTokenInstance = useSelector(state => state.auth.apiTokenInstance);
+
+    const handlePhoneNumberSubmit = async (event) => {
         event.preventDefault();
         console.log(`Creating new chat with phone number: ${phoneNumber}`);
 
-        // Start a new chat with the entered phone number (replace this with your actual logic)
-        const newChatId = startNewChat(phoneNumber);
+        // Commented out for now - this will be needed when connecting to the server
+        /*
+        try {
+            const newChatId = await startNewChat(apiTokenInstance, phoneNumber, "Hello!");
+            navigate(`/chat/${newChatId}`);
+        } catch (error) {
+            console.error(`Failed to start a new chat: ${error}`);
+        }
+        */
 
-        // Navigate to the ChatPage of the new chat
-        navigate(`/window/${newChatId}`);
+        // Redirect to the chat page on submit
+        navigate('/chat');
 
         setPhoneNumber('');
     }
@@ -33,7 +46,7 @@ export const ChatList = ({ chats = [] }) => {
             </form>
 
             {chats.map(chat => (
-                <Link to={`/window/${chat.id}`} key={chat.id} className="chat-list-item">
+                <Link to={`/chat/${chat.id}`} key={chat.id} className="chat-list-item">
                     <h2 className="chat-title">{chat.name}</h2>
                     <p className="chat-message">{chat.latestMessage}</p>
                 </Link>

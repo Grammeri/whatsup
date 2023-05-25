@@ -9,6 +9,14 @@ export const ChatPage = ({ selectedChat }) => {
     const status = useSelector((state) => state.chat.status);
     const error = useSelector((state) => state.chat.error);
 
+    const mockMessages = [
+        { sentByMe: true, text: 'Hello there!' },
+        { sentByMe: false, text: 'Hi, how can I help you?' },
+        { sentByMe: true, text: 'I have a question about my order.' },
+        { sentByMe: false, text: 'Sure, I can assist with that. Can you please provide your order number?' },
+        // More messages...
+    ];
+
     const handleSubmit = e => {
         e.preventDefault();
         if (message.trim() === '') {
@@ -16,7 +24,7 @@ export const ChatPage = ({ selectedChat }) => {
         }
         // Dispatch sendMessage action
         dispatch(sendMessage({
-            chatId: selectedChat.id,
+            chatId: selectedChat ? selectedChat.id : 'mockChatId', // use a mock chat ID if no chat is selected
             message: message
         }));
         setMessage('');
@@ -30,7 +38,7 @@ export const ChatPage = ({ selectedChat }) => {
         <div className="chat-page">
             <div className="chat-window">
                 <h1 className="chat-name">{selectedChat.name}</h1>
-                {selectedChat.messages.map((message, index) => (
+                {mockMessages.map((message, index) => (
                     <p key={index} className={message.sentByMe ? 'chat-message sent' : 'chat-message received'}>
                         {message.text}
                     </p>
