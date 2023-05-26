@@ -21,10 +21,15 @@ export const rtkQueryApi = createApi({
         }),
         sendMessage: builder.mutation({
             query: ({ chatId, message, idInstance, apiTokenInstance }) => ({
-                url: `/waInstance${idInstance}/sendMessage/${chatId}/${message}/${apiTokenInstance}`,
+                url: `/waInstance${idInstance}/sendMessage/${apiTokenInstance}`,
                 method: 'POST',
+                body: {
+                    chatId: chatId,
+                    body: message
+                }
             }),
         }),
+
         logout: builder.mutation({
             query: ({ idInstance, apiTokenInstance }) => ({
                 url: `/waInstance${idInstance}/logout/${apiTokenInstance}`,
