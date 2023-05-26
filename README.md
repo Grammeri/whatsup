@@ -92,27 +92,27 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 •	Пользователь видит ответ получателя в чате 
  
 ** "Frontend React Developer" Test Task**
-
 As part of the test task, you are required to develop a user interface for sending and receiving WhatsApp messages.
 
 Time to complete the task: 5 days
 
 Requirements:
+1.	You need to develop a user interface for sending and receiving WhatsApp messages.
+2.	You are required to use the GREEN-API service (https://green-api.com/).
+3.	You need to implement sending and receiving only text messages.
+4.	You should take the appearance of the chat interface from the prototype at https://web.whatsapp.com/.
+5.	You should implement the interface to be as simple as possible with a minimal set of features.
+6.	You need to implement message sending using the method described at https://greenapi.com/docs/api/sending/SendMessage/.
+7.	You need to implement message receiving using the method described at https://greenapi.com/docs/api/receiving/technology-http-api/.
+8.	You are required to use React.
 
-You need to develop a user interface for sending and receiving WhatsApp messages.
-You are required to use the GREEN-API service (https://green-api.com/).
-You need to implement sending and receiving only text messages.
-You should take the appearance of the chat interface from the prototype at https://web.whatsapp.com/.
-You should implement the interface to be as simple as possible with a minimal set of features.
-You need to implement message sending using the method described at https://greenapi.com/docs/api/sending/SendMessage/.
-You need to implement message receiving using the method described at https://greenapi.com/docs/api/receiving/technology-http-api/.
-You are required to use React technology.
-Expected outcome:
-• The user navigates to the chat website and enters their GREEN-API system credentials (idInstance, apiTokenInstance).
-• The user enters the recipient's phone number and creates a new chat.
-• The user writes a text message and sends it to the recipient on WhatsApp.
-• The recipient replies to the message in the WhatsApp messenger.
-• The user sees the recipient's response in the chat.
+Expected outcome: 
+•	The user navigates to the chat website and enters their GREEN-API system credentials (idInstance, apiTokenInstance).
+•	The user enters the recipient's phone number and creates a new chat.
+•	The user writes a text message and sends it to the recipient on WhatsApp.
+•	The recipient replies to the message in the WhatsApp messenger. 
+•	The user sees the recipient's response in the chat.
+
  
 
  
