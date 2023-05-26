@@ -1,3 +1,4 @@
+/*
 import React, { useState } from 'react';
 import './ChatInput.css';
 
@@ -22,3 +23,4 @@ export const ChatInput = ({ onSubmit }) => {
         </form>
     );
 };
+*/

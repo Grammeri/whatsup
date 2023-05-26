@@ -1,3 +1,4 @@
+/*
 // ChatList.js
 import React, { useState } from 'react';
 import {Link, useNavigate} from 'react-router-dom';
@@ -18,14 +19,14 @@ export const ChatList = ({ chats = [] }) => {
         console.log(`Creating new chat with phone number: ${phoneNumber}`);
 
         // Commented out for now - this will be needed when connecting to the server
-        /*
+        /!*
         try {
             const newChatId = await startNewChat(apiTokenInstance, phoneNumber, "Hello!");
             navigate(`/chat/${newChatId}`);
         } catch (error) {
             console.error(`Failed to start a new chat: ${error}`);
         }
-        */
+        *!/
 
         // Redirect to the chat page on submit
         navigate('/chat');
@@ -54,3 +55,4 @@ export const ChatList = ({ chats = [] }) => {
         </div>
     );
 };
+*/

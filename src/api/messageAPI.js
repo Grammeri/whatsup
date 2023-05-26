@@ -1,3 +1,4 @@
+/*
 import { instance } from './apiBaseUrl';
 
 const ID_INSTANCE = '1101824138';
@@ -14,3 +15,4 @@ export const messageApi = {
         return instance.get(`/${ID_INSTANCE}/ReceiveMessage/${API_TOKEN_INSTANCE}`);
     }
 };
+*/

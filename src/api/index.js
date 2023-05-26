@@ -1,5 +1,5 @@
-import messageAPI from './messageAPI';
+/*import messageAPI from './messageAPI';
 
 export {
     messageAPI
-};
+};*/

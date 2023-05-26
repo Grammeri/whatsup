@@ -1,3 +1,4 @@
+/*
 // authSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import {authApi} from "./components/authApi";
@@ -19,14 +20,14 @@ export const login = createAsyncThunk('auth/login', async (credentials, thunkAPI
         }
 
         // Uncomment the following for real API call
-        /*
+        /!*
         const response = await authApi.login(credentials.idInstance, credentials.apiTokenInstance);
         if (response.isLoggedIn) {
             return credentials;  // return credentials if login is successful
         } else {
             return thunkAPI.rejectWithValue(response.message);
         }
-        */
+        *!/
     } catch (error) {
         return thunkAPI.rejectWithValue(error.message);
     }
@@ -59,3 +60,4 @@ export const { logout } = authSlice.actions;
 export const authReducer = authSlice.reducer;
 
 export default authSlice.reducer;
+*/
