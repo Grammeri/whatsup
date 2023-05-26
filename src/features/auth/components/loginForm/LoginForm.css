@@ -34,12 +34,12 @@ h2 {
 }
 
 .login-button {
-    width: 30%;
+    width: 100px;
     padding: 10px;
     border: none;
     border-radius: 20px;
-    color: #fff;
-    background-color: #128C7E;
+    color: palegreen;
+    background-color: #075E54;
     cursor: pointer;
     transition: background-color 0.3s ease;
     background-color: #075E54;

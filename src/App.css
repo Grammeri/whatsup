@@ -6,13 +6,13 @@
  /* align-items: center;*/
  /* justify-content: center;
   padding: 20px;*/
-  background-color: red !important;
+  background-color:palegreen;
 }
 
 .header {
   width: 100%;
   padding: 20px;
-  background-color: #075e54;
-  color: #fff;
+  background-color: #075e54 !important;
+  color: palegreen !important;
   text-align: center;
 }

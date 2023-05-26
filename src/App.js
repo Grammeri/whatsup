@@ -33,7 +33,7 @@ function App() {
                     {/* Using mock data for now */}
                     <Route path="/chat" element={<ChatPage selectedChat={selectedChat}/>}/>
                     <Route path="/404" element={<div style={{textAlign: "center"}}><img src={notFound} alt="Not Found"/></div>}/>
-                    <Route path="*" element={<Navigate to="/404"/>}/>
+                    <Route path="*" element={<Navigate to="/"/>}/> {/* Navigates to login form if route not defined */}
                 </Routes>
             </div>
         </Router>

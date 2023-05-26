@@ -8,15 +8,15 @@
 .chat-message.sent {
     align-self: flex-end;
     background-color: lightseagreen;
-color: black;
+    color: black;
 }
 
 .chat-message.received {
     align-self: flex-start;
     background-color: #dcdcdc;
-color: black;
+    color: black;
 }
-h1{
-    text-align: center;
 
+h1 {
+    text-align: center;
 }

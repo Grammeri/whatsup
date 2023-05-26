@@ -16,12 +16,14 @@
 }
 
 .chat-send {
-    padding: 10px;
+    padding: 10px 20px;
     border: none;
-    border-radius: 50%;
+    border-radius: 10%;
     color: white;
     background-color: #075e54;
     cursor: pointer;
+    min-width: 100px; /* Adjusted min-width value */
+    font-size: 14px; /* Adjusted font-size value */
 }
 
 .chat-send:hover {
