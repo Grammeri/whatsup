@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/whatsup/static/css/main.460e9150.css",
+    "main.js": "/whatsup/static/js/main.8dc654a4.js",
+    "static/js/787.28cb0dcd.chunk.js": "/whatsup/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/whatsup/index.html",
+    "main.460e9150.css.map": "/whatsup/static/css/main.460e9150.css.map",
+    "main.8dc654a4.js.map": "/whatsup/static/js/main.8dc654a4.js.map",
+    "787.28cb0dcd.chunk.js.map": "/whatsup/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.460e9150.css",
+    "static/js/main.8dc654a4.js"
+  ]
+}
