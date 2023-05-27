@@ -10,9 +10,6 @@ export const rtkQueryApi = createApi({
                 method: 'GET',
             }),
         }),
-/*        getMessages: builder.query({
-            query: ({ idInstance, apiTokenInstance }) => `/wa${idInstance}/inMessages/${apiTokenInstance}`,
-        }),*/
         receiveMessage: builder.mutation({
             query: ({ idInstance, apiTokenInstance }) => ({
                 url: `/waInstance${idInstance}/receiveMessage/${apiTokenInstance}`,
@@ -29,7 +26,6 @@ export const rtkQueryApi = createApi({
                 }
             }),
         }),
-
         logout: builder.mutation({
             query: ({ idInstance, apiTokenInstance }) => ({
                 url: `/waInstance${idInstance}/logout/${apiTokenInstance}`,
@@ -50,7 +46,6 @@ export const rtkQueryApi = createApi({
 
 export const {
     useLoginMutation,
-    useGetMessagesQuery,
     useSendMessageMutation,
     useReceiveMessageMutation,
     useLogoutMutation,

@@ -1,58 +1,68 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { useForm } from 'react-hook-form';
+import { Form, Button, Container } from 'react-bootstrap';
 import { useLoginMutation, useLogoutMutation } from '../../../../app/rtkQueryApi';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../../services/reactContext/AuthContext';
+import './RtkQueryLogin.css'; // Import the CSS file
 
 export const RtkQueryLoginForm = () => {
-    const [idInstance, setIdInstance] = useState('1101824138');
-    const [apiTokenInstance, setApiTokenInstance] = useState('f9715a604e704343afe3b1af600a699de4e931a608f94ee3a3');
-    const [loginMutation, { data: loginData, error: loginError }] = useLoginMutation();
-    const [logoutMutation] = useLogoutMutation();
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { idInstance, apiTokenInstance, setIdInstance, setApiTokenInstance } = useContext(AuthContext);
+    const [loginMutation, { error: loginError }] = useLoginMutation();
     const navigate = useNavigate();
 
-    const onSubmit = async (event) => {
-        event.preventDefault();
+    const onSubmit = async (data) => {
         try {
-            const response = await loginMutation({ idInstance, apiTokenInstance });
-            console.log(response);
-            if (response.data.wid) {
-                navigate('/list');
-            }
+            await loginMutation({ idInstance: data.idInstance, apiTokenInstance: data.apiTokenInstance });
+            console.log('Login successful, setting context values');
+            navigate('/list');
         } catch (error) {
             console.error('Login failed:', error);
         }
     };
 
-
-    if (loginError) {
-        console.error('Login failed:', loginError);
-    }
-
-    const handleLogout = async () => {
-        try {
-            await logoutMutation();
-        } catch (error) {
-            console.error('Logout failed:', error);
-        }
-    };
-
     return (
-        <div className="login-container">
-            <form onSubmit={onSubmit}>
-                <input
-                    type="text"
-                    placeholder="Id Instance"
-                    value={idInstance}
-                    onChange={(e) => setIdInstance(e.target.value)}
-                />
-                <input
-                    type="password"
-                    placeholder="Api Token Instance"
-                    value={apiTokenInstance}
-                    onChange={(e) => setApiTokenInstance(e.target.value)}
-                />
-                <button type="submit">Log In</button>
-            </form>
-            <button onClick={handleLogout}>Log Out</button>
-        </div>
+        <AuthContext.Provider value={{ idInstance, apiTokenInstance, setIdInstance, setApiTokenInstance }}>
+            <Container className="login-container">
+                <div className="login-panel">
+                    <div className="formContent">
+                        <h2>Sign in to WhatsApp</h2>
+                        <Form onSubmit={handleSubmit(onSubmit)}>
+                            <Form.Group controlId="idInstance">
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Enter Id Instance"
+                                    {...register('idInstance', { required: true })}
+                                    isInvalid={errors.idInstance}
+                                    className="login-input"
+                                />
+                                {errors.idInstance && <Form.Control.Feedback type="invalid" style={{"display":"flex", "justify-content":"center", "color":"red"}}>Id Instance is required</Form.Control.Feedback>}
+                            </Form.Group>
+
+                            <Form.Group controlId="apiTokenInstance">
+                                <Form.Control
+                                    type="password"
+                                    placeholder="Enter Api Token Instance"
+                                    {...register('apiTokenInstance', { required: true })}
+                                    isInvalid={errors.apiTokenInstance}
+                                    className="login-input apiTokenInstance"
+                                />
+                                {errors.apiTokenInstance && (
+                                    <Form.Control.Feedback type="invalid" style={{"display":"flex", "justify-content":"center", "color":"red"}}>Api Token Instance is required</Form.Control.Feedback>
+                                )}
+                            </Form.Group>
+
+                            <div className="buttons">
+                                <Button variant="primary" type="submit" className="login-button">
+                                    Log In
+                                </Button>
+                            </div>
+                        </Form>
+                    </div>
+                </div>
+                {loginError && <div className="error-message">Login failed: {loginError.message}</div>}
+            </Container>
+        </AuthContext.Provider>
     );
 };

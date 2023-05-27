@@ -1,3 +1,4 @@
+/*
 // utils/api.js
 export async function startNewChat(apiTokenInstance, phoneNumber, message) {
     const response = await fetch('https://api.green-api.com/v1/messages', {
@@ -23,3 +24,4 @@ export async function startNewChat(apiTokenInstance, phoneNumber, message) {
     // Assuming that the first message ID corresponds to the chat ID
     return jsonResponse.messages[0].id;
 }
+*/

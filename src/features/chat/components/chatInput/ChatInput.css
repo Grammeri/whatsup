@@ -1,4 +1,5 @@
-/* ChatInput.css */
+/*
+!* ChatInput.css *!
 .chat-form {
     display: flex;
     align-items: center;
@@ -22,10 +23,11 @@
     color: white;
     background-color: #075e54;
     cursor: pointer;
-    min-width: 100px; /* Adjusted min-width value */
-    font-size: 14px; /* Adjusted font-size value */
+    min-width: 100px; !* Adjusted min-width value *!
+    font-size: 14px; !* Adjusted font-size value *!
 }
 
 .chat-send:hover {
     background-color: #05493c;
 }
+*/

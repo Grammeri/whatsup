@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useGetChatsQuery, useSendMessageMutation } from '../../../../app/rtkQueryApi';
+import { useGetChatsQuery, useStartNewChatMutation } from '../../../../app/rtkQueryApi';
+import './rtkQueryChatList.css'; // Import the CSS file
 
 export const RtkQueryChatList = () => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const navigate = useNavigate();
     const { data: chats, isLoading } = useGetChatsQuery();
-    const [sendMessage] = useSendMessageMutation();
+    const [startNewChat] = useStartNewChatMutation();
 
     const handlePhoneNumberSubmit = async (event) => {
         event.preventDefault();
         console.log(`Creating new chat with phone number: ${phoneNumber}`);
 
         try {
-            const newChat = await sendMessage({ chatId: phoneNumber, message: 'Hello!' });
+            await startNewChat({ phoneNumber }); // use startNewChat instead of sendMessage
             navigate(`/chat/${phoneNumber}`);
         } catch (error) {
             console.error(`Failed to start a new chat: ${error}`);
@@ -25,15 +26,17 @@ export const RtkQueryChatList = () => {
     if (isLoading) return <p>Loading chats...</p>;
 
     return (
-        <div className="chat-list">
-            <form onSubmit={handlePhoneNumberSubmit}>
+        <div className="chat-list-container">
+            <form onSubmit={handlePhoneNumberSubmit} className="chat-form">
                 <input
                     value={phoneNumber}
                     onChange={(e) => setPhoneNumber(e.target.value)}
                     placeholder="Enter phone number"
                     className="chat-input"
                 />
-                <button type="submit">Create New Chat</button>
+                <button type="submit" className="create-chat-button">
+                    Create New Chat
+                </button>
             </form>
 
             {chats &&

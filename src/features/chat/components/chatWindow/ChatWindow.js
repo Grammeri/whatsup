@@ -1,3 +1,4 @@
+/*
 // ChatWindow.js
 import React from 'react';
 import './ChatWindow.css';
@@ -18,3 +19,4 @@ export const ChatWindow = ({ selectedChat }) => {
         </div>
     );
 };
+*/

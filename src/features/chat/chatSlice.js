@@ -1,3 +1,4 @@
+/*
 // chatSlice.js
 
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
@@ -69,3 +70,4 @@ const chatSlice = createSlice({
 
 export const chatReducer = chatSlice.reducer
 export default chatSlice.reducer;
+*/
