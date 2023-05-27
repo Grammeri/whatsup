@@ -1,20 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useGetChatsQuery, useStartNewChatMutation } from '../../../../app/rtkQueryApi';
+import { useGetChatsQuery, useSendMessageMutation } from '../../../../app/rtkQueryApi';
+import { AuthContext } from '../../../../services/reactContext/AuthContext'; // Import the AuthContext
 import './rtkQueryChatList.css'; // Import the CSS file
 
 export const RtkQueryChatList = () => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const navigate = useNavigate();
     const { data: chats, isLoading } = useGetChatsQuery();
-    const [startNewChat] = useStartNewChatMutation();
+    const [sendMessage] = useSendMessageMutation();
+    const { idInstance, apiTokenInstance } = useContext(AuthContext); // Get values from AuthContext
 
     const handlePhoneNumberSubmit = async (event) => {
         event.preventDefault();
         console.log(`Creating new chat with phone number: ${phoneNumber}`);
 
         try {
-            await startNewChat({ phoneNumber }); // use startNewChat instead of sendMessage
+            await sendMessage({
+                chatId: phoneNumber,
+                message: 'Hello! Starting a new chat.',
+                idInstance,
+                apiTokenInstance
+            });
             navigate(`/chat/${phoneNumber}`);
         } catch (error) {
             console.error(`Failed to start a new chat: ${error}`);
