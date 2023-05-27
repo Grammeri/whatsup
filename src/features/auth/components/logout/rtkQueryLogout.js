@@ -1,3 +1,4 @@
+/*
 // Logout.js
 import React from 'react';
 import { useLogoutMutation } from '../api';
@@ -10,7 +11,7 @@ const RtkQueryLogout = () => {
 
     const handleLogout = async () => {
         try {
-            await logout({ idInstance: /* from redux state */, apiTokenInstance: /* from redux state */});
+            await logout({ idInstance: /!* from redux state *!/, apiTokenInstance: /!* from redux state *!/});
             dispatch(logoutSlice());
             // If you have any other actions that need to be taken upon logout, put them here
         } catch (error) {
@@ -26,3 +27,4 @@ const RtkQueryLogout = () => {
 };
 
 export default RtkQueryLogout;
+*/

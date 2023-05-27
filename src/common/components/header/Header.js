@@ -6,12 +6,12 @@ import './Header.css';
 
 export const Header = () => {
     const navigate = useNavigate();
-    const { setIdInstance, setApiTokenInstance } = useContext(AuthContext);
+    const { idInstance, apiTokenInstance, setIdInstance, setApiTokenInstance } = useContext(AuthContext);
     const [logoutMutation] = useLogoutMutation();
 
     const handleLogout = async () => {
         try {
-            await logoutMutation();
+            await logoutMutation({ idInstance, apiTokenInstance });
             setIdInstance(''); // Clear the idInstance in AuthContext
             setApiTokenInstance(''); // Clear the apiTokenInstance in AuthContext
             navigate('/');

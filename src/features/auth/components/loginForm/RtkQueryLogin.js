@@ -14,13 +14,16 @@ export const RtkQueryLoginForm = () => {
 
     const onSubmit = async (data) => {
         try {
-            await loginMutation({ idInstance: data.idInstance, apiTokenInstance: data.apiTokenInstance });
+            const result = await loginMutation({ idInstance: data.idInstance, apiTokenInstance: data.apiTokenInstance });
             console.log('Login successful, setting context values');
+            setIdInstance(data.idInstance);
+            setApiTokenInstance(data.apiTokenInstance);
             navigate('/list');
         } catch (error) {
             console.error('Login failed:', error);
         }
     };
+
 
     return (
         <AuthContext.Provider value={{ idInstance, apiTokenInstance, setIdInstance, setApiTokenInstance }}>
