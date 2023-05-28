@@ -1,9 +1,8 @@
-// AuthContext.js
-import React from 'react';
+import React from "react";
 
 export const AuthContext = React.createContext({
-    idInstance: null,
-    apiTokenInstance: null,
-    setIdInstance: () => {},
-    setApiTokenInstance: () => {},
+  idInstance: null,
+  apiTokenInstance: null,
+  setIdInstance: () => {},
+  setApiTokenInstance: () => {},
 });
