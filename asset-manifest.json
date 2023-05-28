@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/mockWhatsupTest/static/css/main.2a227c38.css",
-    "main.js": "/mockWhatsupTest/static/js/main.4569c2ce.js",
-    "static/js/787.28cb0dcd.chunk.js": "/mockWhatsupTest/static/js/787.28cb0dcd.chunk.js",
-    "index.html": "/mockWhatsupTest/index.html",
-    "main.2a227c38.css.map": "/mockWhatsupTest/static/css/main.2a227c38.css.map",
-    "main.4569c2ce.js.map": "/mockWhatsupTest/static/js/main.4569c2ce.js.map",
-    "787.28cb0dcd.chunk.js.map": "/mockWhatsupTest/static/js/787.28cb0dcd.chunk.js.map"
+    "main.css": "/whatsup/static/css/main.a238895c.css",
+    "main.js": "/whatsup/static/js/main.7bd55253.js",
+    "static/js/787.28cb0dcd.chunk.js": "/whatsup/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/whatsup/index.html",
+    "main.a238895c.css.map": "/whatsup/static/css/main.a238895c.css.map",
+    "main.7bd55253.js.map": "/whatsup/static/js/main.7bd55253.js.map",
+    "787.28cb0dcd.chunk.js.map": "/whatsup/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2a227c38.css",
-    "static/js/main.4569c2ce.js"
+    "static/css/main.a238895c.css",
+    "static/js/main.7bd55253.js"
   ]
 }
