@@ -15,16 +15,16 @@
     background-color: palegreen;
     color: #075e54;
     cursor: pointer;
-    margin-left: auto;  /* This will push the button to the right */
+    margin-left: auto; /* This will push the button to the right */
 }
 
 .logout-button:hover {
     background-color: lightseagreen !important;
 
 }
+
 .titleLogout {
     display: flex;
     background-color: #075e54;
     color: #fff;
-
 }
